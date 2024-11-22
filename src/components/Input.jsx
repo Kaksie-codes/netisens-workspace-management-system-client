@@ -2,9 +2,9 @@
 
 const Input = ({type, placeholder}) => {
   return (
-    <div className="relative border">
+    <div className="relative border custom-input">
         <input type={type} className="w-full" />
-        <span className="absolute left-2">{placeholder}<span className="text-red-700">*</span></span>
+        <span className="placeholder">{placeholder}<span className="text-red-800">*</span></span>
     </div>
   )
 }

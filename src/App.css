@@ -25,6 +25,20 @@
   transform: translateX(0%);
 }
 
+.custom-input{
+  height: 40px;
+  border: 1px solid red;
+}
+.custom-input input{
+  height: 100%;
+}
+.custom-input .placeholder{
+  position: absolute;
+  top: 50%;
+  /* transform: translateY(-50%); */
+  left: 5px;
+}
+
 @media (min-width: 1024px){
   .navbar{
     position: unset;
