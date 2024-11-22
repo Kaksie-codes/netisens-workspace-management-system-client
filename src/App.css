@@ -26,18 +26,37 @@
 }
 
 .custom-input{
-  height: 40px;
-  border: 1px solid red;
+  height: 40px;  
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid #6d6a6a;
 }
 .custom-input input{
   height: 100%;
+  padding-inline: 10px;
+  border-radius: 15px;
+  border: 1px solid #6d6a6a;
+  padding-top: 10px;
 }
 .custom-input .placeholder{
   position: absolute;
   top: 50%;
-  /* transform: translateY(-50%); */
-  left: 5px;
+  transform: translateY(-50%);
+  transition: top 0.5s ease-in;
+  left: 10px;
 }
+
+.custom-input input:focus + .placeholder{
+  top: 8px;
+  font-size: 10px;
+}
+.custom-input .has-value{
+  top: 8px;
+  font-size: 10px;
+}
+
+/* For all browsers */
+
 
 @media (min-width: 1024px){
   .navbar{
