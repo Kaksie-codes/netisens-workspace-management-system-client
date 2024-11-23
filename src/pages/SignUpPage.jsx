@@ -7,7 +7,7 @@ import BackgroundImg from '/signup-img.jpg'
 
 const SignUpPage = () => {
   return (
-    <section className="min-h-screen relative grid place-items-center overflow-y-hidden">
+    <section className="min-h-screen lg:h-screen relative grid place-items-center overflow-y-hidden">
         <img src={BackgroundImg} alt="sign-up background" className='h-full w-full object-cover' />
         <form action="" className='absolute bg-white text-black w-[90%] p-4 max-w-[600px] rounded-3xl'>
           <p>Find your <span className='text-[#13D10F]'>perfect</span> space with our help.</p>
