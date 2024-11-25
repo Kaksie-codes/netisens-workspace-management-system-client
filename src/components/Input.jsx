@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 
-const Input = ({type, placeholder}) => {
+const Input = ({type, placeholder, placeholder_styles, input_styles}) => {
   const [value, setValue] = useState(""); 
 
   const handleChange = (e) => {
@@ -20,14 +20,14 @@ const Input = ({type, placeholder}) => {
             <option value="not-to-say">Prefer not to say</option>
           </select>
         ) : (
-          <div className="relative border custom-input w-full">
+          <div className={`relative custom-input w-full ${input_styles}`}>
             <input
               type={type}
               value={value}
-              className="w-full"
+              className={"w-full"}
               onChange={handleChange}
             />
-            <span className={`placeholder ${value.length > 0 ? 'has-value' : ''}`}>{placeholder}<span className="text-red-800">*</span></span>
+            <span className={`placeholder ${placeholder_styles} ${value.length > 0 ? 'has-value' : ''}`}>{placeholder}<span className="text-red-800">*</span></span>
           </div>
         )
       }      

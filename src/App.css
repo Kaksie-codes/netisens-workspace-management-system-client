@@ -1,3 +1,10 @@
+/* utility classes */
+.poppins{
+  font-family: "Poppins", sans-serif;
+}
+.monserrat{
+  font-family: "Montserrat", sans-serif;
+}
 .hero{
   height: calc(100vh - 70px);
 }
@@ -54,7 +61,6 @@
   top: 8px;
   font-size: 10px;
 }
-
 /* For all browsers */
 
 

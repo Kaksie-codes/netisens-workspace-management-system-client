@@ -10,7 +10,9 @@ const Header = () => {
   return (
     <header className="h-[70px]">
         <div className="container px-4 flex items-center justify-between h-full">
-            <Logo size={"small"}/>
+            <Link to={"/"}>
+                <Logo size={"small"}/>
+            </Link>
             <div onClick={() => setShowNav(true)} className="block lg:hidden">
                 <HambergerMenu size="32" color="#ffffff"/>
             </div>
