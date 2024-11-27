@@ -10,6 +10,8 @@ import CategoryCard from '../categoryCard';
 import StudentImg from '/student.png';
 import userImg from '/user.png';
 import SiwesImg from '/siwes.png';
+import PrimaryBtn from '../buttons/PrimaryBtn';
+import { AiOutlineArrowRight } from 'react-icons/ai';
 
 const SwiperComponent = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -33,9 +35,9 @@ const SwiperComponent = () => {
   ];
 
   return (
-    <div className="swiper_container">
+    <div className="swiper_container py-8 px-4 mx-auto h-screen max-w-[1200px]">
       <h1 className="text-center text-4xl font-extrabold ">Category</h1>
-      <p className='text-center leading-4 mt-1'>Pick your Category to proceed:</p>
+      <p className='text-center leading-4 mt-2'>Pick your Category to proceed:</p>
       <p className='text-center'>User, Students or SIWES</p>
       <Swiper
         effect="coverflow"
@@ -61,7 +63,7 @@ const SwiperComponent = () => {
         onSwiper={(swiper) => setActiveIndex(swiper.realIndex)}
       >
         {categories.map((category, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index} className='w-[80%]'>
             <CategoryCard
               image={category.image}
               role={category.role}
@@ -70,7 +72,13 @@ const SwiperComponent = () => {
             />
           </SwiperSlide>
         ))}
-      </Swiper>
+      </Swiper>      
+      <div className='flex items-center justify-center'>
+        <button className='border-green-color'>
+          Next
+          <AiOutlineArrowRight/>
+        </button>
+      </div>
     </div>
   );
 };

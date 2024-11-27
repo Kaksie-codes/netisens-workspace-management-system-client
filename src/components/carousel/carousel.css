@@ -1,22 +1,8 @@
-.swiper_container{
-  
-  max-width: 124rem;
-  max-width: 1200px;
-  padding: 4rem 1rem;
-  margin: 0 auto;
-  /* background-color: red; */
-  height: 100vh;
-}
 
-.swiper{
-  height: 700px;
+.swiper{  
   height: 400px;
-  padding: 20px 0;
-  /* background-color: blueviolet; */
-  padding-bottom: 20px !important;
-  width: 100% !important;
-  height: 400px;
-  /* padding: 20px 10px !important; */
+  padding: 20px 0; 
+  width: 100% !important; 
   position: relative;
 }
 .swiper-slide{
@@ -46,3 +32,13 @@
       border-radius: 30px !important;
   }
 } */
+
+button{
+  padding: 10px 20px;
+  border: 2px solid red;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
