@@ -35,7 +35,7 @@ const SwiperComponent = () => {
 
   return (
     <div className="swiper_container py-8 px-4 mx-auto h-screen max-w-[1200px]">
-      <h1 className="text-center text-4xl font-extrabold ">Category</h1>
+      <h1 className="text-center mt-8 md:mt-0 text-4xl font-extrabold ">Category</h1>
       <p className='text-center leading-4 mt-2'>Pick your Category to proceed:</p>
       <p className='text-center'>User, Students or SIWES</p>
       <Swiper
@@ -50,18 +50,18 @@ const SwiperComponent = () => {
           depth: 250,
           modifier: 2.5,
         }}
-        pagination={
-          { 
-            el:'.swiper-custom-pagination',
-            clickable: true,
-            renderBullet: function(index, className){
-              return `<div class="${className}">
-              <span class="number">${index+1}</span>
-              <span class ="line"></span>
-              </div>`
-            }
+         pagination={
+        { 
+          el:'.swiper-custom-pagination',
+          clickable: true,
+          renderBullet: function(index, className){
+            return `<div class="${className}">
+            <span class="number">${index+1}</span>
+            <span class ="line"></span>
+            </div>`
           }
-        }      
+        }
+      }      
         navigation={{
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
