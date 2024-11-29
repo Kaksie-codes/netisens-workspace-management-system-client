@@ -2,7 +2,7 @@
 
 const CategoryCard = ({image, role, description, isInFocus}) => {
   return (
-    <div style={{ backgroundColor: 'white', boxShadow: '0 10px 15px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1)', padding: '20px', borderRadius: '8px' }} className="bg-white h-[350px] rounded-3xl text-black px-5 py-10 flex flex-col items-center">
+    <div style={{ backgroundColor: 'white', boxShadow: '0 10px 15px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1)', padding: '20px', borderRadius: '8px' }} className="bg-white h-[320px] rounded-3xl text-black px-5 py-10 flex flex-col gap-2 items-center">
         <img src={image} alt="" />
         <h1 className="text-2xl font-bold">{role}</h1>
         <p className="text-center text-lg">{description}</p>

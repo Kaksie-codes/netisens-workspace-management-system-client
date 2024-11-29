@@ -10,7 +10,6 @@ import CategoryCard from '../categoryCard';
 import StudentImg from '/student.png';
 import userImg from '/user.png';
 import SiwesImg from '/siwes.png';
-import PrimaryBtn from '../buttons/PrimaryBtn';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 
 const SwiperComponent = () => {
@@ -51,7 +50,18 @@ const SwiperComponent = () => {
           depth: 250,
           modifier: 2.5,
         }}
-        pagination={{ el: ".swiper-pagination", clickable: true }}
+        pagination={
+          { 
+            el:'.swiper-custom-pagination',
+            clickable: true,
+            renderBullet: function(index, className){
+              return `<div class="${className}">
+              <span class="number">${index+1}</span>
+              <span class ="line"></span>
+              </div>`
+            }
+          }
+        }      
         navigation={{
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -72,6 +82,8 @@ const SwiperComponent = () => {
             />
           </SwiperSlide>
         ))}
+        <div className="swiper-custom-pagination">
+        </div>
       </Swiper>      
       <div className='flex items-center justify-center'>
         <button className='border-green-color'>
