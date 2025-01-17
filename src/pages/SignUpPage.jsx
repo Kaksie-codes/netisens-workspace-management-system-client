@@ -4,6 +4,8 @@ import PrimaryBtn from '../components/buttons/PrimaryBtn';
 import Input from '../components/Input';
 import BackgroundImg from '/signup-img.jpg';
 import Logo from '../components/Logo';
+// import toast from 'react-hot-toast';
+import { toast } from 'react-toastify';
 
 const SignUpPage = () => {
   const [formData, setFormData] = useState({
@@ -69,12 +71,17 @@ const SignUpPage = () => {
         }),
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Something went wrong');
-      }
+      const data = await response.json()
+      console.log('data', data);
 
-      alert('Signup successful!');
+      if(!data.success){        
+        toast.error(data.message);
+        throw new Error(data.message || 'Something went wrong');
+      }    
+      
+
+      
+      toast.success('Signup successful!');
       setFormData({
         username: '',
         email: '',
