@@ -7,16 +7,16 @@ import PrivacyPolicy from './pages/privacy-policy'
 import Categoriespage from './pages/Categoriespage'
 import LandingPage from './pages/LandingPage'
 import HomePage from './pages/HomePage'
-// import { Toaster } from 'react-hot-toast'
-import { ToastContainer } from 'react-toastify'
+import { Toaster } from 'react-hot-toast'
+// import { ToastContainer } from 'react-toastify'
 
 function App() {
   
 
   return (
     <div className='min-h-screen bg-primary-color text-white'>
-      {/* <Toaster/> */}
-      <ToastContainer />
+      <Toaster/>
+      {/* <ToastContainer /> */}
       <Routes>
         <Route path='/' element={<LandingPage/>}/>
         <Route path='/signin' element={<SignInPage/>}/>
@@ -25,6 +25,7 @@ function App() {
         <Route path='/categories' element={<Categoriespage/>}/>
         <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
         <Route path='/terms-of-service' element={<TermsOfService/>}/>
+        {/* <Route path='users/:id/verify/:token' element={<UserVerificationPage/>}/> */}
       </Routes>
     </div>
   )

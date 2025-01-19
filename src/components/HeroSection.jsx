@@ -1,9 +1,11 @@
+import { useNavigate } from 'react-router-dom'
 import PrimaryBtn from './buttons/PrimaryBtn'
 // import SecondaryBtn from './buttons/SecondaryBtn'
 import Logo from './Logo'
 import HeroImg from '/hero-img.png'
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   return (
     <section className='hero'>
         <div className="container px-4  grid gap-5 grid-cols-1 place-items-center lg:grid-cols-2 h-full ">
@@ -15,8 +17,16 @@ const HeroSection = () => {
                 <h1 className='text-5xl md:text-6xl xl:text-[96px] italic font-extrabold text-green-color'>Workspace</h1>
                 <p className='text-xl my-5 xl:w-[450px]'>Innovative workspaces - public, private, and semi-private. Boost your productivity!</p>
                 <div className="flex mt-5 flex-col max-sm:pr-5 md:flex-row items-center lg:items-start justify-start gap-4">
-                  <PrimaryBtn text="Get Started" styles="bg-[#ff9d00] hover:bg-orange-700 transition duration-500"/>
-                  <PrimaryBtn text="I'm already registered" styles="bg-[#ff9d00] hover:bg-orange-700 transition duration-500"/>
+                  <PrimaryBtn 
+                    text="Get Started" 
+                    styles="bg-[#ff9d00] hover:bg-orange-700 transition duration-500"
+                    onClick={() => navigate('/signup')}
+                  />
+                  <PrimaryBtn 
+                    text="I'm already registered" 
+                    styles="bg-[#ff9d00] hover:bg-orange-700 transition duration-500"
+                    onClick={() => navigate('/signin')}
+                  />
                   {/* <SecondaryBtn text="I'm already registered" styles="bg-primary-color"/> */}
                 </div>
             </div>

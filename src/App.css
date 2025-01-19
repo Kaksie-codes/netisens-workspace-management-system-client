@@ -33,7 +33,7 @@
 }
 
 .custom-input{
-  height: 40px;  
+  height: 55px;  
   border-radius: 15px;
   overflow: hidden;
   border: 1px solid #6d6a6a;
@@ -54,14 +54,33 @@
 }
 
 .custom-input input:focus + .placeholder{
-  top: 8px;
-  font-size: 10px;
+  top: 10px;
+  font-size: 12px;
 }
 .custom-input .has-value{
-  top: 8px;
-  font-size: 10px;
+  top: 10px;
+  font-size: 12px;
 }
-/* For all browsers */
+.signup {
+  position: relative;
+  overflow: hidden; /* Prevents pseudo-element overflow */
+}
+
+.signup::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/public/signup-img.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(3px); /* Blur effect */
+  opacity: 0.8; /* Darken effect */
+  z-index: 1; /* Places the background behind the children */
+}
 
 
 @media (min-width: 1024px){

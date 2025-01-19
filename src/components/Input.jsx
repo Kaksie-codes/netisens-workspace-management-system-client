@@ -22,6 +22,7 @@ const Input = ({ type, placeholder, placeholder_styles, input_styles, value, onC
             value={value}
             className={"w-full"}
             onChange={onChange}
+            autoComplete="new"
           />
           <span
             className={`placeholder ${placeholder_styles} ${
