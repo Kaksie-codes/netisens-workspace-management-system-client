@@ -212,7 +212,9 @@ const SignUpPage = () => {
             </div>        
           </div>            
         </form>
-        <div className='grid place-items-center mt-3'><GoogleOauth/></div>
+        <div className='grid place-items-center mt-3'>
+          <GoogleOauth bgColors={"bg-black hover:bg-black/80"}/>
+        </div>
         <p className="text-[#6D6A6A] text-base mt-4 text-center">
             Already have an account?{' '}
             <Link to={'/signin'} className="text-[#009de9] hover:underline">

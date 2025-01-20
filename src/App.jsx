@@ -8,6 +8,11 @@ import Categoriespage from './pages/Categoriespage'
 import LandingPage from './pages/LandingPage'
 import HomePage from './pages/HomePage'
 import { Toaster } from 'react-hot-toast'
+import UserVerificationPage from './pages/UserVerificationPage'
+import ProfilePage from './pages/ProfilePage'
+import ForgotPasswordPage from './pages/ForgotPasswordPage'
+import VerifyOTPPage from './pages/VerifyOTPPage'
+import ResetPasswordPage from './pages/ResetPasswordPage'
 
 function App() {
   
@@ -20,10 +25,14 @@ function App() {
         <Route path='/signin' element={<SignInPage/>}/>
         <Route path='/signup' element={<SignUpPage/>}/>
         <Route path='/home' element={<HomePage/>}/>
+        <Route path='/profile' element={<ProfilePage/>}/>
         <Route path='/categories' element={<Categoriespage/>}/>
         <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
         <Route path='/terms-of-service' element={<TermsOfService/>}/>
-        {/* <Route path='users/:id/verify/:token' element={<UserVerificationPage/>}/> */}
+        <Route path='/users/:id/verify/:token' element={<UserVerificationPage/>}/>
+        <Route path='/forgot-password' element={<ForgotPasswordPage/>}/>
+        <Route path='/verify-otp' element={<VerifyOTPPage/>}/>
+        <Route path='/reset-password' element={<ResetPasswordPage/>}/>
       </Routes>
     </div>
   )

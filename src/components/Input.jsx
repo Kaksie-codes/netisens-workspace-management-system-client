@@ -2,10 +2,10 @@
 
 const Input = ({ type, placeholder, placeholder_styles, input_styles, value, onChange }) => {
   return (
-    <div className="w-full">
+    <div className="w-full overflow-hidden">
       {type === "select" ? (
         <select
-          className="w-[fit-content] min-w-full custom-input p-[10px]"
+          className="w-[fit-content] min-w-full custom-input p-[10px] max-w-full"
           value={value}
           onChange={onChange}
         >

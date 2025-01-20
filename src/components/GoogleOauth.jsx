@@ -6,7 +6,7 @@ import { app } from '../firebase';
 import { AppContext } from "../context/AppContext";
 import PrimaryBtn from "./buttons/PrimaryBtn";
 
-const GoogleOauth = () => {    
+const GoogleOauth = ({bgColors}) => {    
     const {setUserInfo} = useContext(AppContext);
     const [isLoading, setIsloading] = useState(false); 
 
@@ -48,7 +48,7 @@ const GoogleOauth = () => {
   return (    
     <PrimaryBtn
         text={isLoading ? 'Signing In...' : 'Continue with Google'}
-        styles="bg-black hover:bg-black/80 transition duration-500 text-white"
+        styles={`${bgColors} transition duration-500 text-white`}
         disabled={isLoading}
         onClick={handleClick}
         icon={<img src={GoogleIcon} alt="google icon" className="w-5" />}
