@@ -19,7 +19,7 @@ const UserVerificationPage = () => {
     const resendVerificationEmail = async() => {
         try {
             setIsLoading(true);
-            const res = await fetch(`http://localhost:3050/api/auth/resendVerificationMail/${id}`, {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/resendVerificationMail/${id}`, {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' }
             })
@@ -44,7 +44,7 @@ const UserVerificationPage = () => {
 
     const verifyUser = async () => {
         try {
-            const res = await fetch(`http://localhost:3050/api/auth/${id}/verify/${token}`, {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/${id}/verify/${token}`, {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' }
             })
