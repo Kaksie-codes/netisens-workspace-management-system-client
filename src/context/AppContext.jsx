@@ -8,17 +8,7 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     console.log({userInfo})
-  },[userInfo])
-
-//   const initialState = {
-//     userInfo:null,
-//     authPageMode: 'sign-in',
-//     resetPageMode: 'input-email',  
-//     verified: false
-// }
-  // const [userInfo, setUserInfo] = useState(false);
-
-  
+  },[userInfo]) 
 
   return (
     <AppContext.Provider value={{ userInfo, setUserInfo, isVerified, setIsVerified }}>

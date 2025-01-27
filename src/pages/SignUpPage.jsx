@@ -8,6 +8,7 @@ import { AppContext } from '../context/AppContext';
 import GoogleOauth from '../components/GoogleOauth';
 
 
+
 const SignUpPage = () => {
   const {setUserInfo, userInfo} = useContext(AppContext); 
 
