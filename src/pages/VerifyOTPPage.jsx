@@ -9,7 +9,8 @@ const VerifyOTPPage = () => {
     const {setUserInfo, userInfo} = useContext(AppContext); 
     const navigate = useNavigate(); 
     const location = useLocation();
-    const { email } = location.state || {}; // Safely access maskedEmail
+    // const { email } = location.state || {}; // Safely access maskedEmail
+    const email = 'abaz@gmail.com'; // Safely access maskedEmail
     let otpLength = 4;
     const [OTP, setOTP] = useState(new Array(otpLength).fill(''));
     const inputRefs = useRef([]);
