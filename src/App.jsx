@@ -13,6 +13,7 @@ import ProfilePage from './pages/ProfilePage'
 import ForgotPasswordPage from './pages/ForgotPasswordPage'
 import VerifyOTPPage from './pages/VerifyOTPPage'
 import ResetPasswordPage from './pages/ResetPasswordPage'
+import PrivateRoutes from './components/PrivateRoutes'
 
 function App() {
   
@@ -25,7 +26,7 @@ function App() {
         <Route path='/signin' element={<SignInPage/>}/>
         <Route path='/signup' element={<SignUpPage/>}/>
         <Route path='/home' element={<HomePage/>}/>
-        <Route path='/profile' element={<ProfilePage/>}/>
+        {/* <Route path='/profile' element={<ProfilePage/>}/> */}
         <Route path='/categories' element={<Categoriespage/>}/>
         <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
         <Route path='/terms-of-service' element={<TermsOfService/>}/>
@@ -33,6 +34,12 @@ function App() {
         <Route path='/forgot-password' element={<ForgotPasswordPage/>}/>
         <Route path='/verify-otp' element={<VerifyOTPPage/>}/>
         <Route path='/reset-password' element={<ResetPasswordPage/>}/>
+
+        
+        {/*Protected Routes  */}
+        <Route path='' element={<PrivateRoutes/>}> 
+          <Route path='/profile' element={<ProfilePage/>}/> 
+        </Route>
       </Routes>
     </div>
   )

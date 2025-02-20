@@ -69,7 +69,7 @@ const ResetPasswordPage = () => {
         password: '',
         confirmPassword: '',
       });
-      navigate('/'); // Redirect to home or login page
+      navigate('/signin'); // Redirect to home or login page
     } catch (error) {
       setErrors({ general: error.message });
     } finally {

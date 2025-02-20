@@ -102,6 +102,7 @@ const VerifyOTPPage = () => {
             // Submit the form data
             const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/verifyOTP`, {
                 method: 'POST',
+                credentials: 'include',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, OTP:OTP.join("") }),
             });

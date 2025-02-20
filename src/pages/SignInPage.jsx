@@ -11,6 +11,9 @@ import toast from 'react-hot-toast'
 
 const SignInPage = () => {
   const {setUserInfo, userInfo} = useContext(AppContext); 
+ 
+
+  console.log("Component userInfo:", userInfo); // ✅ Should match AppContext state
 
   const [formData, setFormData] = useState({    
     email: '',    
