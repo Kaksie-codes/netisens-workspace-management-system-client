@@ -1,8 +1,11 @@
 import React from 'react'
+import Dashboardwrapper from '../components/dashboardwrapper'
 
 const ProfilePage = () => {
   return (
-    <div>ProfilePage</div>
+    <Dashboardwrapper>
+      <div>ProfilePage</div>
+    </Dashboardwrapper>
   )
 }
 

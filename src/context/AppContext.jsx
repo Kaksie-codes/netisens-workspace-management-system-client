@@ -1,16 +1,16 @@
 import { createContext, useEffect, useState } from 'react';
+import Cookies from 'js-cookie';
 
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [userInfo, setUserInfo] = useState(null);  
+  const [loading, setLoading] = useState(true);
   const [isVerified, setIsVerified] = useState(false);  
 
   useEffect(() => {
     console.log("Updated userInfo:", userInfo); // ✅ Now logs after state update
-  }, [userInfo]);
-
- 
+  }, [userInfo]); 
 
   // Function to fetch user info if token exists
   const fetchUserInfo = async () => {

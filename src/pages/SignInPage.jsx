@@ -1,19 +1,30 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import PrimaryBtn from '../components/buttons/PrimaryBtn'
 import Input from '../components/Input'
 import SignInImg from '/sign-in.png'
 import Logo from '../components/Logo'
 import GoogleOauth from '../components/GoogleOauth'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { AppContext } from '../context/AppContext'
 import toast from 'react-hot-toast'
+import { useDispatch, useSelector } from 'react-redux'
+import { setCredentials } from '../store/slices/authSlice'
 
 
 const SignInPage = () => {
-  const {setUserInfo, userInfo} = useContext(AppContext); 
+  // const {setUserInfo, userInfo} = useContext(AppContext); 
+  const { userInfo } = useSelector((state) => state.auth)
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
  
 
-  console.log("Component userInfo:", userInfo); // ✅ Should match AppContext state
+  console.log("SinInPage userInfo:", userInfo); // ✅ Should match AppContext state
+
+  useEffect(() => {
+    if(!!userInfo) {
+      navigate('/profile');
+    }
+  }, [])
 
   const [formData, setFormData] = useState({    
     email: '',    
@@ -76,11 +87,13 @@ const SignInPage = () => {
       } 
       
       toast.success(data?.message);
-      setUserInfo(data?.user)
+      dispatch(setCredentials(data?.user));
+
       setFormData({        
         email: '',
         password: ''        
       });
+      navigate('/profile');
     } catch (error) {
       setErrors({ general: error.message });
     } finally {
