@@ -7,7 +7,8 @@ import { AppContext } from "../context/AppContext";
 import PrimaryBtn from "./buttons/PrimaryBtn";
 
 const GoogleOauth = ({bgColors}) => {    
-    const {setUserInfo} = useContext(AppContext);
+    // const {setUserInfo} = useContext(AppContext);
+    
     const [isLoading, setIsloading] = useState(false); 
 
     const handleClick = async () => { 

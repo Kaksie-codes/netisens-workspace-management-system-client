@@ -15,9 +15,24 @@ import VerifyOTPPage from './pages/VerifyOTPPage'
 import ResetPasswordPage from './pages/ResetPasswordPage'
 import PrivateRoutes from './components/PrivateRoutes'
 import DashboardPage from './pages/DashboardPage'
+import { useEffect } from 'react'
+import Cookies from 'js-cookie';
 
 function App() {
-  
+//   useEffect(() => {
+//     const accessToken = Cookies.get('accessToken');
+
+//     if (!accessToken) {
+//         console.log("No accessToken found in cookies. Dispatching logout.");
+//         // dispatch(logout());
+//     } else {
+//         console.log("accessToken found in cookies:", accessToken);
+//         // Optionally, you could verify the token here if you want to be extra sure
+//         // before considering the user logged in.  You might have a
+//         // separate action called something like `CHECK_AUTH_STATUS` that
+//         // verifies the token with the backend and updates userInfo.
+//     }
+// }, []);
 
   return (
     <div className='min-h-screen bg-primary-color text-white'>
@@ -25,8 +40,7 @@ function App() {
       <Routes>
         <Route path='/' element={<LandingPage/>}/>
         <Route path='/signin' element={<SignInPage/>}/>
-        <Route path='/signup' element={<SignUpPage/>}/>
-        <Route path='/home' element={<HomePage/>}/>
+        <Route path='/signup' element={<SignUpPage/>}/>        
         {/* <Route path='/profile' element={<ProfilePage/>}/> */}
         <Route path='/categories' element={<Categoriespage/>}/>
         <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
@@ -34,16 +48,18 @@ function App() {
         <Route path='/users/:id/verify/:token' element={<UserVerificationPage/>}/>
         <Route path='/forgot-password' element={<ForgotPasswordPage/>}/>
         <Route path='/verify-otp' element={<VerifyOTPPage/>}/>
-        <Route path='/reset-password' element={<ResetPasswordPage/>}/>
-        <Route path='/profile' element={<ProfilePage/>}/> 
-        <Route path='/admin' element={<DashboardPage/>}>
-          <Route path='/admin/' element={<HomePage/>}/>
-        </Route>
+        <Route path='/reset-password' element={<ResetPasswordPage/>}/> 
+                 
+        
         
         {/* Protected Routes  */}
-        {/* <Route path='' element={<PrivateRoutes/>}> 
-          <Route path='/profile' element={<ProfilePage/>}/> 
-        </Route> */}
+        <Route path='' element={<PrivateRoutes/>}>  
+          <Route path='/profile' element={<ProfilePage/>}/>         
+          <Route path='/home' element={<HomePage/>}/>
+          <Route path='/admin' element={<DashboardPage/>}>
+            <Route path='/admin/' element={<HomePage/>}/>
+          </Route>
+        </Route>
       </Routes>
     </div>
   )

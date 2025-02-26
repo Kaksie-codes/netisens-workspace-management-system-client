@@ -12,9 +12,9 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <AppProvider>      
+        {/* <AppProvider>       */}
             <App />
-        </AppProvider>
+        {/* </AppProvider> */}
       </BrowserRouter>
     </Provider>    
   </StrictMode>
